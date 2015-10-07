@@ -1,0 +1,43 @@
+{
+    "manifest_version": 2,
+    "name": "__MSG_appName__",
+    "version": "1.0.0",
+
+    "default_locale": "en",
+    "description": "__MSG_appDesc__",
+    "icons": {
+        "128": "icons/128.png",
+        "48": "icons/48.png",
+        "16": "icons/16.png"
+    },
+
+    "browser_action": {
+        "default_icon": {
+            "19": "icons/19.png",
+            "38": "icons/38.png"
+        },
+        "default_popup": "popup/index.html"
+    },
+
+    "author": {
+        "name": "gbk",
+        "email": "ck0123456@gmail.com",
+        "url": "https://github.com/gbk"
+    },
+    "background": {
+        "scripts": [
+            "background/storage.js",
+            "background/showip.js",
+            "background/runpac.js"
+        ]
+    },
+    "homepage_url": "https://github.com/gbk/network-mapping",
+    "permissions": [
+        "tabs",
+        "proxy",
+        "browsingData",
+        "webRequest",
+        "webRequestBlocking",
+        "<all_urls>"
+    ]
+}

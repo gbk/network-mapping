@@ -1,0 +1,73 @@
+/* 
+* @Author: caoke
+* @Date:   2015-06-07 23:23:37
+* @Last Modified by:   caoke
+* @Last Modified time: 2015-06-08 12:19:10
+*/
+.panel {
+    position: relative;
+    width: 450px;
+    margin-top: 10px;
+    border: solid 1px #e7e7e7;
+    border-radius: 4px;
+
+    a {
+        text-decoration: none;
+        color: #999;
+
+        &:hover {
+            color: #333;
+        }
+    }
+
+    & > .panel-heading {
+        height: 22px;
+        padding: 0 10px;
+        background-color: #f8f8f8;
+        border-bottom: solid 1px #e7e7e7;
+        line-height: 22px;
+
+        .panel-title {
+            float: left;
+            font-weight: bold;
+        }
+
+        .panel-actions {
+            float: right;
+        }
+    }
+
+    & > .panel-body {
+        background-color: #fff;
+    }
+
+    &.no-data {
+        padding: 20px 0;
+        text-align: center;
+
+        span {
+            display: inline-block;
+            padding: 5px 10px;
+            white-space: nowrap;
+            color: #999;
+        }
+    }
+
+    .toggle-show {
+        height: 8px;
+        opacity: 0;
+        cursor: pointer;
+        transition: opacity .4s;
+        text-align: center;
+    }
+
+    &:hover {
+        .toggle-show {
+            opacity: .1;
+
+            &:hover {
+                opacity: 1;
+            }
+        }
+    }
+}

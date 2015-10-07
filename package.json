@@ -1,0 +1,39 @@
+{
+  "name": "network-mapping",
+  "version": "1.0.0",
+  "description": "A Chrome extension to map one URL to another.",
+  "scripts": {
+    "build": "build.sh",
+    "watch": "webpack --config webpack.config.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gbk/network-mapping.git"
+  },
+  "keywords": [
+    "chrome",
+    "extension",
+    "hosts",
+    "ip",
+    "domain",
+    "mapping"
+  ],
+  "author": {
+    "name": "gbk",
+    "email": "ck0123456@gmail.com",
+    "url": "https://github.com/gbk"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/gbk/network-mapping/issues"
+  },
+  "homepage": "https://github.com/gbk/network-mapping",
+  "devDependencies": {
+    "css-loader": "^0.19.0",
+    "extract-text-webpack-plugin": "^0.8.2",
+    "less": "^2.5.3",
+    "less-loader": "^2.2.1",
+    "style-loader": "^0.12.4",
+    "webpack": "^1.12.2"
+  }
+}

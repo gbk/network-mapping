@@ -1,0 +1,48 @@
+/* 
+* @Author: caoke
+* @Date:   2015-06-07 23:22:37
+* @Last Modified by:   caoke
+* @Last Modified time: 2015-06-07 23:25:25
+*/
+.tags {
+    margin-top: 5px;
+
+    & > li {
+        float: left;
+        position: relative;
+        height: 20px;
+        padding: 0 20px 0 10px;
+        margin: 3px 4px 0 0;
+        border: solid 1px #e7e7e7;
+        border-radius: 4px 10px 10px 4px;
+        transition: all .2s;
+        cursor: pointer;
+        line-height: 20px;
+        font-weight: bold;
+        white-space: nowrap;
+        color: #999;
+
+        &:after {
+            content: ' ';
+            display: block;
+            position: absolute;
+            right: 5px;
+            top: 5px;
+            width: 6px;
+            height: 6px;
+            border-radius: 6px;
+            border: solid 1px #e7e7e7;
+            background-color: #fff;
+        }
+
+        &:hover {
+            box-shadow: 0 1px 1px #ccc;
+        }
+
+        &.active {
+            background-color: #30a0da;
+            border-color: #30a0da;
+            color: #fff;
+        }
+    }
+}

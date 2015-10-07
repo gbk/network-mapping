@@ -1,0 +1,13 @@
+<div class="form">
+    <div class="message" ng-if="c.dialog.message.splice">
+        <div ng-repeat="msg in c.dialog.message">{{msg}}</div>
+    </div>
+    <div class="message" ng-if="!c.dialog.message.splice">{{c.dialog.message}}</div>
+    <div class="image" ng-if="c.dialog.image">
+        <img ng-src="{{c.dialog.image}}" alt="alipay"/>
+    </div>
+    <div class="form-actions">
+        <button type="button" ng-click="c.dialog.confirm()">{{c.i18n('confirm')}}</button>
+        <button type="button" ng-click="c.dialog = null">{{c.i18n('cancel')}}</button>
+    </div>
+</div>

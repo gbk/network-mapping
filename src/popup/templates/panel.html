@@ -1,0 +1,33 @@
+<div class="panel">
+    <div class="panel-heading checkable large" ng-class="{ enable: c.isGroupEnable(group) }" ng-click="c.toggleGroupEnable(group)">
+        <div class="panel-title">{{group.name}}</div>
+        <div class="panel-actions">
+            <a href="#" class="addnew" ng-click="c.formDialog('Node', null, { group: group.id }); $event.stopPropagation();" title="{{c.i18n('addNode')}}"></a>
+            <a href="#" class="pen" ng-click="c.formDialog('Group', group); $event.stopPropagation();" title="{{c.i18n('editGroup')}}"></a>
+            <a href="#" class="trash" ng-if="group.id" ng-click="c.confirmDialog('deleteGroup', c.groups, $index); $event.stopPropagation();" title="{{c.i18n('deleteGroup')}}"></a>
+        </div>
+    </div>
+    <s></s>
+    <div class="panel-body">
+        <ul ng-repeat="node in group.nodes" class="rows" ng-style="{ 'max-height': group.expand ? group.nodes.length * 22 + 'px' : 0 }">
+            <li class="row checkable fn-clear" ng-if="node.show" ng-class="{ enable: node.enable }" ng-click="node.enable = !node.enable;">
+                <div class="cell-rule" title="{{node.rule}}">
+                    {{node.rule}}
+                </div>
+                <div class="cell-ip" title="{{node.ip}}">
+                    {{node.ip}}
+                </div>
+                <div class="cell-comment" title="{{node.comment}}">
+                    {{node.comment}}
+                </div>
+                <div class="cell-actions">
+                    <a href="#" class="pen" ng-click="c.formDialog('Node', node); $event.stopPropagation();" title="{{c.i18n('editNode')}}"></a>
+                    <a href="#" class="trash" ng-click="c.confirmDialog('deleteNode', group.nodes, $index); $event.stopPropagation();" title="{{c.i18n('deleteNode')}}"></a>
+                </div>
+            </li>
+        </ul>
+        <div class="toggle-show">
+            <div ng-if="group.nodes.length" ng-class="{ 'i-expand': !group.expand, 'i-collapse': group.expand }" ng-click="group.expand = !group.expand"></div>
+        </div>
+    </div>
+</div>

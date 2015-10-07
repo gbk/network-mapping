@@ -1,0 +1,22 @@
+<form class="form" target="_blank">
+    <label ng-repeat="field in c.dialog.form" class="fn-clear">
+        <span>{{field.label}}</span>
+        <span ng-if="field.type == 'select'">
+            <select ng-if="field.multiple" ng-model="field.value" multiple="multiple">
+                <option ng-if="field.options.forEach" ng-repeat="o in field.options" value="{{o.id}}" ng-selected="field.value == o.id">{{o.name}}</option>
+                <option ng-if="!field.options.forEach" ng-repeat="o in c[field.options]" value="{{o.id}}" ng-selected="field.value == o.id">{{o.name}}</option>
+            </select>
+            <select ng-if="!field.multiple" ng-model="field.value">
+                <option ng-if="field.options.forEach" ng-repeat="o in field.options" value="{{o.id}}" ng-selected="field.value == o.id">{{o.name}}</option>
+                <option ng-if="!field.options.forEach" ng-repeat="o in c[field.options]" value="{{o.id}}" ng-selected="field.value == o.id">{{o.name}}</option>
+            </select>
+        </span>
+        <span ng-if="field.type == 'text'">
+            <input type="text" ng-model="field.value">
+        </span>
+    </label>
+    <div class="form-actions">
+        <button type="submit" ng-click="c.dialog.confirm()">{{c.i18n('confirm')}}</button>
+        <button type="button" ng-click="c.dialog = null">{{c.i18n('cancel')}}</button>
+    </div>
+</form>

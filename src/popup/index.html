@@ -1,0 +1,26 @@
+<!doctype html>
+<html ng-app="app">
+<head>
+<meta charset="utf-8"/>
+
+<!-- style entry: ./styles/index.less -->
+<link rel="stylesheet" href="../popup.css"/>
+
+<script src="../lib/angular.min.js"></script>
+
+<!-- script entry: ./scripts/index.js -->
+<script src="../popup.js"></script>
+</head>
+<body ng-controller="Ctrl as c" ng-class="{ 'dialog-show': c.dialog }">
+
+    <nav ng-include="'./templates/nav.html'"></nav>
+
+    <div ng-include="'./templates/tags.html'"></div>
+
+    <ul ng-if="c.groups.length">
+        <li ng-repeat="group in c.groups" ng-if="group.show" ng-include="'./templates/panel.html'"></li>
+    </ul>
+
+    <div ng-if="c.dialog" ng-include="'./templates/dialog.html'"></div>
+</body>
+</html>

@@ -1,0 +1,63 @@
+<div class="nav fn-clear">
+    <div class="brand" ng-click="c.open('https://github.com/gbk/network-mapping')">
+        <img src="../icons/16.png" alt="Brand" title="{{c.i18n('appName')}} v{{c.version}}">
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="Search" ng-model="c.search" ng-disabled="!!c.searchCurrent">
+        <a href="#" ng-hide="!c.search" ng-click="c.search=''; c.searchCurrent=false">Clear</a>
+        <a href="#" ng-hide="c.search" ng-click="c.searchCurrentHostname()" title="Search the hostname of current tab">Tab</a>
+    </div>
+    <ul class="menu">
+        <li>
+            Add
+            <ul>
+                <li ng-click="c.formDialog('Group')">Group</li>
+                <li ng-click="c.formDialog('Node')">Node</li>
+            </ul>
+        </li>
+        <li>
+            <span ng-click="c.open('./upload/index.html')">Import</span>
+        </li>
+        <li>
+            Export
+            <ul>
+                <li>
+                    <a ng-href="{{c.jsonDataUri}}" download="exports.json" ng-mouseenter="c.exportJson()">JSON</a>
+                </li>
+                <li>
+                    <a ng-href="{{c.hostsDataUri}}" download="hosts" ng-mouseenter="c.exportHosts()">Hosts</a>
+                </li>
+                <li>
+                    <a ng-href="{{c.pacFileDataUri}}" download="exports.pac" ng-mouseenter="c.exportPacFile()">Pac File</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            Setting
+            <ul>
+                <li ng-click="c.toggleEnable()">
+                    <span ng-if="c.proxyEnable">✓</span>
+                    <span ng-if="!c.proxyEnable">✘</span>
+                    Enable
+                </li>
+                <li ng-click="c.toggleShowIP()">
+                    <span ng-if="c.showIP">✓</span>
+                    <span ng-if="!c.showIP">✘</span>
+                    Show IP
+                </li>
+                <li>✘ Pac URL</li>
+            </ul>
+        </li>
+        <li>
+            More
+            <ul>
+                <li ng-click="c.open('https://github.com/gbk/network-mapping')">Project Home</li>
+                <li ng-click="c.open('about:blank')">Rate</li>
+                <li>Share</li>
+                <li ng-click="c.open('https://github.com/gbk/network-mapping/issues')">Issues</li>
+                <li ng-click="c.bugReport()">Bug Report</li>
+                <li ng-click="c.confirmDialog('donate')">Donate</li>
+            </ul>
+        </li>
+    </ul>
+</div>

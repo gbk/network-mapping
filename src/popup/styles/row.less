@@ -1,0 +1,43 @@
+/* 
+* @Author: caoke
+* @Date:   2015-06-07 23:23:37
+* @Last Modified by:   caoke
+* @Last Modified time: 2015-06-08 12:19:10
+*/
+
+.rows {
+    transition: max-height .4s;
+    overflow: hidden;
+
+    .row {
+        & > * {
+            float: left;
+            height: 22px;
+            padding: 0 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            line-height: 22px;
+            color: #333;
+        }
+
+        & > .cell-rule {
+            width: 120px;
+        }
+
+        & > .cell-ip {
+            width: 100px;
+        }
+
+        & > .cell-comment {
+            width: 110px;
+            color: #666;
+        }
+
+        & > .cell-actions {
+            width: 40px;
+            color: #e7e7e7;
+            text-align: right;
+        }
+    }
+}

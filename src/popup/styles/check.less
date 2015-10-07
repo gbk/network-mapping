@@ -1,0 +1,78 @@
+/* 
+* @Author: caoke
+* @Date:   2015-06-07 23:23:37
+* @Last Modified by:   caoke
+* @Last Modified time: 2015-06-08 12:19:10
+*/
+.checkable {
+    position: relative;
+    cursor: pointer;
+    opacity: 0.5;
+
+    &:before {
+        content: ' ';
+        position: absolute;
+        left: 5px;
+        top: 4px;
+        width: 14px;
+        height: 14px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3wYNDjEeZFo+/AAAAkFJREFUOMvVk09Ik3EYxz/v3lG03PyzuVlt7iB08BbNagVBGHTqFtWQ8uIhokiStNI6iUiFtbIQiqhDgqZWUoERhhVhaX+WKctaGpj5f9P98d27vft1Uio62KFDz+k5fD/fw/f5PvDfjdFokqsqT5eOTw75t23fUvRXcFZWpnzyxLGyuPJ9bk57Lw6U7m7SLxW2Wi3LjxzeX1F+vLhiVu43jE6OoihR0y8iR252et7a1ebf4VyH1Xju7KGaWKpDHUndFH1zXlFVt+ebMd1wdFGUbU63320vv33vedljq920YdHUbkmvv1RyPpy6kfRr1eKdUinq73gilhyjF8gDYG+RK/dWa8n9aVEjBkSpqG3a0W13Zrg2b8yzXWzwXJ4Stdrr+EHRrZSIxt5dWv767DagAEACaOnytLu2WncGwl9BCAyGFfR3hQdMmEIFhTbXiDK6LJlUCU7Eqa/o6+5sGakGOoCkHmA2zb+md8JHQtVASOjCOuxuQ75eN0XPmI+UpqGpOtq8M4OdLeNXgS4gCSADvHg0PpzpUNwWp5oVjUWYn48Qmg0yNTONEo+gqvM8aZ6ebPMGr2kJmoGZhYxkgFiIQOCtFjCvkt02p5yZUCU0VQJNAknHh6eJWOuZWGM0JK4Dwz9fSF5YYrPi0+CrxECGTd5kdejNyQQgJEb9yVRbXfTh2JB2BegDxB8NAJSo+PL5TdK30qRbZ3Pqc4JjKR40xF5+7ElcAJ4B2pJaZ7Lo3J5Txp7CfQafJFEMpP2z5/oBcp79MyptUD0AAAAASUVORK5CYII=);
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        background-size: 14px 14px;
+        -webkit-filter: grayscale(1);
+    }
+
+    &.large:before {
+        width: 16px;
+        height: 16px;
+        left: 4px;
+        top: 3px;
+        background-size: 16px 16px;
+    }
+
+    &.enable {
+        opacity: 1;
+
+        &:before {
+            -webkit-filter: none;
+            opacity: 1;
+        }
+    }
+
+    & > *:first-child {
+        text-indent: 15px;
+    }
+
+    &.row:hover {
+        opacity: 1;
+        background: -webkit-linear-gradient(left, rgba(48, 160, 218, 1) 0%, rgba(48, 160, 218, 1) 80%, rgba(48, 160, 218, 0.2) 90%, rgba(48, 160, 218, 0.1) 100%);
+
+        & > *,
+        a {
+            color: #fff !important;
+        }
+    }
+
+    &.panel-heading {
+        & + s {
+            display: none;
+        }
+
+        &:hover {
+            opacity: 1;
+
+            & + s {
+                display: block;
+                position: absolute;
+                z-index: -1;
+                top: -1px;
+                right: -1px;
+                bottom: -1px;
+                left: -1px;
+                border-radius: 4px;
+                box-shadow: 0 3px 6px rgba(0, 0, 0, .3);
+            }
+        }
+    }
+}

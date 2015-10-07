@@ -1,0 +1,5 @@
+<ul ng-if="c.tags.length" class="tags fn-clear">
+    <li ng-repeat="tag in c.tags" ng-class="{ active: tag.active }" ng-click="c.filterTag(tag)">
+        <span>{{tag.name}}</span>
+    </li>
+</ul>

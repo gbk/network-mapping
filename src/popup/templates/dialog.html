@@ -1,0 +1,14 @@
+<div class="mask">
+    <div class="panel dialog">
+        <div class="panel-heading">
+            <div class="panel-title">{{c.dialog.title}}</div>
+            <div class="panel-actions">
+                <a href="#" ng-click="c.dialog = null">✖</a>
+            </div>
+        </div>
+        <div class="panel-body">
+            <div ng-if="c.dialog.form" ng-include="'./templates/form.html'"></div>
+            <div ng-if="c.dialog.message" ng-include="'./templates/message.html'"></div>
+        </div>
+    </div>
+</div>
